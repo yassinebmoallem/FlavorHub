@@ -1,160 +1,152 @@
 # 🍴 FlavorHub
 
-> A recipe discovery web app built by a team of 6 students as part of our university Agile project course (*Projet fédéré — méthode Agile*).
+> Application web de découverte de recettes — réalisée dans le cadre d’un projet universitaire (*Projet fédéré — méthode Agile*).
 
 ---
 
-## 📖 About the Project
+## 📖 À propos du projet
 
-FlavorHub is a recipe platform where users can browse hundreds of recipes, filter by category, search by keyword, and save their favorites. It was developed over several sprints using Agile methodology, with a focus on clean UI, working authentication, and smooth interactions without full page reloads.
+FlavorHub est une plateforme de recettes où les utilisateurs peuvent parcourir des centaines de recettes, filtrer par catégorie, rechercher par mot-clé et sauvegarder leurs favoris.  
+Bien que le projet fédéré impliquait une équipe de 6 étudiants, **l’intégralité du développement full‑stack** (base de données, backend PHP, frontend JavaScript, interactions AJAX, gestion des sessions, débogage) a été menée par **Yassine Ben Maallem**.
 
-The project was a hands-on introduction to building a real full-stack web application as a team — from database design to frontend interactions — while practicing Scrum ceremonies, task delegation, and iterative delivery.
-
----
-
-## ✨ Features
-
-- **Recipe browsing** — Displays a large dataset of recipes loaded dynamically via JavaScript
-- **Search with scoring** — Keyword search ranked by relevance across title, category, ingredients, description, and author
-- **Category filters** — Filter recipes by type with instant DOM updates
-- **Load more / Pagination** — Recipes load 20 at a time to keep the page fast
-- **User authentication** — Register and login system with server-side validation
-- **Secure passwords** — Passwords stored using `password_hash()` / `password_verify()`
-- **Session management** — PHP sessions to keep users logged in across pages
-- **Favorites system** — Add/remove favorites instantly using AJAX (no page reload)
-- **Recipe detail page** — Full recipe view with ingredients, steps, and metadata
-- **No CDN dependencies for icons** — All UI icons are inline SVGs
+L’application a été construite en suivant les principes Agile (sprints, user stories, revues) et constitue une mise en pratique concrète du développement web professionnel.
 
 ---
 
-## 🛠️ Technologies Used
+## ✨ Fonctionnalités
 
-| Layer      | Technology          |
-|------------|---------------------|
-| Frontend   | HTML, CSS, Vanilla JS |
-| Backend    | PHP                 |
-| Database   | MySQL               |
-| Local env  | XAMPP (Apache + MySQL) |
+- **Affichage des recettes** – Chargement dynamique d’un large jeu de données via JavaScript.
+- **Recherche par score** – Mots‑clés recherchés dans le titre, la catégorie, les ingrédients, la description et l’auteur.
+- **Filtres par catégorie** – Mise à jour instantanée du DOM.
+- **Pagination / “Afficher plus”** – 20 recettes chargées à la fois pour conserver des performances fluides.
+- **Authentification utilisateur** – Inscription et connexion avec validation côté serveur.
+- **Mots de passe sécurisés** – Stockage via `password_hash()` / `password_verify()`.
+- **Gestion de sessions** – Session PHP pour rester connecté sur toutes les pages.
+- **Système de favoris** – Ajout / suppression en AJAX (sans rechargement).
+- **Page détail d’une recette** – Vue complète avec ingrédients, étapes et métadonnées.
+- **Aucune dépendance CDN pour les icônes** – Toutes les icônes sont des SVG intégrés.
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Technologies utilisées
 
-```
+| Couche      | Technologie            |
+|-------------|------------------------|
+| Frontend    | HTML, CSS, JavaScript vanilla |
+| Backend     | PHP                    |
+| Base de données | MySQL              |
+| Environnement local | XAMPP (Apache + MySQL) |
+
+---
+
+## 📁 Structure du projet
 flavohub_modified/
-├── index.php               # Main page (recipe listing)
-├── recipe.php              # Recipe detail page
-├── database.sql            # SQL schema (import manually)
+├── index.php # Page principale (liste des recettes)
+├── recipe.php # Détail d’une recette
+├── database.sql # Schéma SQL (import manuel)
 ├── css/
-│   ├── style.css           # Main stylesheet
-│   └── auth.css            # Auth pages stylesheet
+│ ├── style.css # Styles principaux
+│ └── auth.css # Styles des pages d’auth
 ├── js/
-│   └── app.js              # Core JS — search, filtering, AJAX favorites
+│ └── app.js # JS central — recherche, filtres, favoris AJAX
 ├── php/
-│   ├── config.php          # DB connection + auto table creation
-│   └── toggle-favorite.php # Favorites toggle endpoint (returns JSON)
+│ ├── config.php # Connexion DB + création auto des tables
+│ └── toggle-favorite.php # Endpoint pour favoris (JSON)
 ├── pages/
-│   ├── register.php        # Registration form & logic
-│   ├── login.php           # Login form & logic
-│   └── logout.php          # Session destroy
+│ ├── register.php # Inscription
+│ ├── login.php # Connexion
+│ └── logout.php # Destruction de session
 ├── data/
-│   └── recipes-data.js     # Recipe dataset (JS constant)
+│ └── recipes-data.js # Jeu de données des recettes (constante JS)
 └── libs/
-    └── README.txt          # Instructions for optional Leaflet map
-```
+└── README.txt # Instructions pour Leaflet map (optionnel)
+
+text
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Installation
 
-### Prerequisites
+### Prérequis
 
-- [XAMPP](https://www.apachefriends.org/) (or any local server with PHP + MySQL)
-- A web browser
+- [XAMPP](https://www.apachefriends.org/) (ou tout serveur local PHP + MySQL)
+- Un navigateur web
 
-### Installation
+### Étapes
 
-1. **Clone or download** this repository into your XAMPP `htdocs` folder:
-   ```
-   C:/xampp/htdocs/flavohub/
-   ```
+1. **Cloner ou télécharger** ce dépôt dans le dossier `htdocs` de XAMPP :
+C:/xampp/htdocs/flavohub/
 
-2. **Start XAMPP** — make sure both **Apache** and **MySQL** are running.
+text
 
-3. **Set up the database** — open [phpMyAdmin](http://localhost/phpmyadmin) and import `database.sql`, **or** just visit the app — `config.php` will auto-create the database and tables on first load.
+2. **Démarrer XAMPP** – Activer **Apache** et **MySQL**.
 
-4. **Open the app** in your browser:
-   ```
-   http://localhost/flavohub/
-   ```
+3. **Créer la base de données** – Ouvrir [phpMyAdmin](http://localhost/phpmyadmin) et importer `database.sql`, **ou** simplement visiter l’application – `config.php` crée automatiquement la base et les tables au premier chargement.
 
-> ⚠️ **Do not open `index.php` directly from File Explorer** (i.e., via `file://`). The recipe data must be served through a local server to load correctly.
+4. **Ouvrir l’application** dans le navigateur :
+http://localhost/flavohub/
 
----
+text
 
-## 📸 Screenshots
-
-> *Screenshots will be added here.*
-
-| Page | Preview |
-|------|---------|
-| Home / Recipe Listing | *(Add screenshot)* |
-| Recipe Detail | *(Add screenshot)* |
-| Register | *(Add screenshot)* |
-| Login | *(Add screenshot)* |
+> ⚠️ **Ne pas ouvrir `index.php` directement depuis l’explorateur de fichiers** (i.e. via `file://`). Les données des recettes doivent être servies par un serveur local.
 
 ---
 
-## ⚠️ Known Limitations
+## ⚠️ Limitation connue (fonctionnalité abandonnée)
 
-### Unfinished Feature — Restaurant Map
+### Carte des restaurants
 
-We originally planned to add an interactive restaurant map on the recipe detail page using **Leaflet.js** and a restaurant search API. This feature was partially scaffolded (you can see placeholder references in `recipe.php` and the `libs/` folder) but was not completed due to:
+Une carte interactive devait initialement être intégrée sur la page détail des recettes via **Leaflet.js** et une API de restaurants. Cette fonctionnalité a été **abandonnée** par choix pragmatique car :
 
-- Difficulties integrating a suitable external API
-- Most relevant APIs required payment or account approval
-- Time constraints during the final sprint
+- Les API gratuites pertinentes exigeaient approbation ou carte bancaire.
+- L’intégration stable n’était pas garantie dans les délais du sprint.
 
-We made the decision to drop this feature and focus on polishing what was already working rather than shipping something broken. The rest of the app functions fully without it.
+**J’ai préféré livrer une application propre et complète** plutôt qu’une fonctionnalité bancale. Le reste de l’application est entièrement fonctionnel.
 
-### Other Known Issues Fixed During Development
+### Autres bugs corrigés
 
-- **`file://` protocol blocking JSON** — We originally loaded recipe data from an external JSON file, which browsers block under `file://`. We solved this by converting the data to a JavaScript constant (`RECIPES_DATA`) so it loads as a regular script.
-- **Apostrophes breaking JavaScript strings** — Recipe titles and descriptions with apostrophes caused JS string errors. Fixed by properly escaping strings during data handling.
-- **Duplicate email on register** — A bug allowed registration to fail silently if the email already existed. Fixed by checking for duplicates and showing a clear error message.
-
----
-
-## 💡 What We Learned
-
-- How to plan and execute a project in Agile sprints as a team
-- Full-stack development flow: database → backend → frontend
-- AJAX and fetch API for seamless user interactions
-- PHP session management and secure password handling
-- Debugging real bugs that don't appear in tutorials
-- How to make pragmatic decisions (like dropping a feature) to deliver something clean
+- **Problème `file://` bloquant le JSON** → conversion des données en constante JavaScript `RECIPES_DATA`.
+- **Apostrophes dans les titres** coupant les chaînes JS → échappement propre.
+- **Inscription avec email dupliqué** échouant silencieusement → vérification et message clair.
 
 ---
 
-## 🔮 Future Improvements
+## 💡 Ce que j’ai appris
 
-If we were to continue this project, we'd consider:
-
-- [ ] Adding user recipe submissions (not just browsing)
-- [ ] Implementing the restaurant map once a free API is available
-- [ ] Adding a rating / review system
-- [ ] Making the app fully responsive on mobile
-- [ ] Migrating from `mysqli` to PDO for more consistent DB handling
-- [ ] Adding pagination via URL params (shareable filtered views)
+- Planifier et exécuter un projet en Agile (sprints, rétrospectives).
+- Maîtriser l’enchaînement base de données → backend → frontend.
+- Utiliser `fetch()` et AJAX pour des interactions fluides (favoris sans reload).
+- Gérer les sessions PHP et la sécurité des mots de passe.
+- Déboguer des bugs réels (CORS, échappement JS, doublons en BDD).
+- Prendre des décisions pragmatiques (abandonner une carte pour la stabilité).
 
 ---
 
-## 👥 Team
+## 🔮 Améliorations futures envisageables
 
-Built by a team of 6 students — 2nd year university, *Projet fédéré (méthode Agile)*.
+- [ ] Soumission de recettes par les utilisateurs.
+- [ ] Implémentation de la carte des restaurants (dès qu’une API gratuite sera disponible).
+- [ ] Système de notes / commentaires.
+- [ ] Version entièrement responsive (mobile).
+- [ ] Migration de `mysqli` vers PDO.
+- [ ] Pagination via paramètres d’URL (vues filtrables partageables).
 
 ---
 
-## 📄 License
+## 👤 Auteur
 
-This project was created for educational purposes as part of a university course.
+**Yassine Ben Maallem** – Développement full-stack, conception DB, debogage, déploiement.
+
+## 📧 Contact
+
+Pour toute question, suggestion ou collaboration :
+
+- **Email** : yassine.bmaalem@gmail.com
+- **LinkedIn** : [Yassine Ben Maallem](https://www.linkedin.com/in/yassine-ben-maallem-02b87330b/)
+- **GitHub** : [@yassinebmoallem](https://github.com/yassinebmoallem)
+
+---
+
+## 📄 Licence
+
+Projet réalisé à des fins pédagogiques dans le cadre d’un cursus universitaire.
