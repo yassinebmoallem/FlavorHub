@@ -44,25 +44,28 @@ L'objectif pédagogique était de construire une vraie application web en condit
 
 ```
 flavohub/
-├── index.php                  # Page principale (liste des recettes)
-├── recipe.php                 # Page détail d'une recette
-├── database.sql               # Schéma SQL (import manuel)
 ├── css/
-│   ├── style.css              # Feuille de style principale
-│   └── auth.css               # Styles pour les pages d'authentification
-├── js/
-│   └── app.js                 # JS principal — recherche, filtres, favoris AJAX
-├── php/
-│   ├── config.php             # Connexion DB + création automatique des tables
-│   └── toggle-favorite.php    # Endpoint favoris (retourne du JSON)
-├── pages/
-│   ├── register.php           # Formulaire + logique d'inscription
-│   ├── login.php              # Formulaire + logique de connexion
-│   └── logout.php             # Destruction de session
+│   ├── auth.css              # Styles pour les pages d'authentification
+│   └── style.css             # Feuille de style principale
 ├── data/
-│   └── recipes-data.js        # Dataset des recettes (constante JS)
-└── libs/
-    └── README.txt             # Instructions pour la carte Leaflet (optionnel)
+│   ├── recipes/
+│   └── recipes-data.js       # Dataset des recettes (constante JS)
+├── js/
+│   └── app.js                # JS principal — recherche, filtres,
+├── libs/
+│   ├── leaflet.min.css
+│   └── leaflet.min.js
+├── pages/
+│   ├── login.php             # Formulaire + logique de connexion
+│   ├── logout.php            # Destruction de session
+│   └── register.php          # Formulaire + logique d'inscription
+├── php/
+│   ├── config.php            # Connexion DB + création automatique des tables
+│   └── toggle-favorite.php   # Endpoint favoris (retourne du JSON)
+├── database.sql              # Schéma SQL (import manuel)
+├── index.php                 # Page principale (liste des recettes)
+├── README.md
+└── recipe.php                # Page détail d'une recette
 ```
 
 ---
