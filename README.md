@@ -1,3 +1,4 @@
+🚀 **Live Demo:** [https://flavorhub.lovestoblog.com/flavohub_modified/](https://flavorhub.lovestoblog.com/flavohub_modified/)
 # 🍴 FlavorHub
 
 > Application web de découverte de recettes, développée dans le cadre du cours universitaire *Projet fédéré (méthode Agile)*.
